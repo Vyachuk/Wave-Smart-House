@@ -1,0 +1,326 @@
+html {
+    background: linear-gradient( rgba(255, 255, 255, 1), rgb(0,0,0,0.6) ), url('images/backscrin.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    z-index: 0;
+  }
+  body {
+    align-content: center;
+  }
+
+/* Вхідне вікно привітання */
+#startWindow, #addNewRoomWindow {
+    background: rgb(252, 249, 249);
+    opacity: .8;
+    width: 600px;
+    height: 520px;
+    border-radius: 20px;
+    text-align: center;
+    padding: 2px 20px;
+    margin: 80px auto;
+    font-family: arial black;
+    font-size: 24px;
+    z-index: 10;
+}
+#startWindow {
+    display: block;
+}
+input { /* поле для вводу логіна і пароля */
+    width: 300px;
+    height: 30px;
+    padding: 2px 20px;
+    margin: 20px auto;
+    cursor: pointer;
+    border-radius: 50px;
+    display: flex;
+    border: 1px solid #020202;
+}
+#startWindow button, #addNewRoomWindow button {/* кнопка входу по логіну і паролі */
+    padding: 15px 60px;
+    font-size: 18px;
+    font-family: arial black;
+    background: #f0ccab;
+    border-radius: 50px;
+
+    cursor: pointer;
+    margin-top: 150px;
+    outline: none;
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    text-align:  center;
+}
+#startWindow button:hover {
+    background: #c2a58a;
+}
+/* ********* ******* ******* ******* ******* *******
+            Робоче вікно (основний екран)
+**** ***** ****** ******* ******* ******* ******* */
+#deviceMenu, #app, #settings, #allBlocks > div ,#weather  {
+    background: rgb(252, 249, 249, 0.5);
+    opacity: 0.8;
+    width: 900px;
+    display: none;
+    height: 600px;
+    border-radius: 20px;
+    text-align: center;
+    padding: 10px 20px;
+    margin: 20px auto;
+    font-family: arial sans-serif black;
+    font-size: 24px;
+    z-index: 1;
+}
+#weather {
+    width: 150px; height: 280px;
+    margin: 70px 0px 0px 10px;
+    display: block;
+    float: left;
+}
+#app p{
+    margin: 0px;
+}
+#app div div img {
+    height: 23px;
+    width: 23px;
+    margin-bottom: -3px;
+    margin-right: 10px;
+}
+#allBlocks > div {
+    background: rgba(255, 255, 255);
+    margin: 3px auto;
+    width: 180px;
+    height: 160px;
+    z-index: 3;
+    display: inline-block, none;
+    color: #726253;
+    font-size: 20px;
+}
+#allBlocks div select, #allBlocks div input {
+    width: 120px;
+    height: 20px;
+    float: left;
+    margin-top: 8px;
+    padding: 0px auto;
+}
+#allBlocks div input {
+    width: 70px;
+    margin: 0px 0px -10px 0px;
+}
+/* ********* ******* ******* ******* ******* *******
+            Settings (основний екран)
+**** ***** ****** ******* ******* ******* ******* */
+#settings {
+    display: none;
+}
+#settings div{
+    text-align: left;
+    font-size: 20px;
+}
+div#settingroomlist {
+    padding: 20px;
+}
+#settingroomlist > div{
+    margin: 10px 0px 3px 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.settingsiconbox {
+    margin-left: 20px;
+}
+.settingsiconbox img {
+    padding-left: 3px;
+}
+.settingsdevice, .settingsdevice ul{
+    list-style: none; padding: 0; margin:0;
+    width: 800px;
+}
+.settingsdevice > li {
+    display: inline-block;
+    border-right: 1px solid #fff;
+    position: relative;
+    box-shadow: 0px 2px 1px black;
+    border-radius: 10px;
+    padding: 4px 15px;
+}
+.settingsdevice ul > li {
+    cursor: pointer;
+}
+.settingsdevice ul{
+    position: absolute;
+    display: none;
+    width: 130px;
+    font-size: 17px;
+    border-radius: 10px;
+    padding: 8px;
+    box-shadow: 0 0 10px black;
+    z-index:5;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+.settingsdevice ul img{
+    width: 25px;
+    height: 25px;
+}
+.settingsdevice li:hover ul{
+    display: block;
+}
+.settingsdevice > li:hover::before {
+    content: ''; /* Создаём пустой псевдоэлемент */
+    top: 0; left: 0; right: 0; bottom: 0; /* Размер совпадает с пунктом меню */
+    box-shadow: 0 5px 10px black; /* Параметры тени */
+    position: absolute; /* Абсолютное позиционирование */
+}
+/* ********* ******* ******* ******* ******* *******
+            Меню (sidebar)
+**** ***** ****** ******* ******* ******* ******* */
+header {
+    font-family: arial sans-serif black;
+    margin: -20px -40px 0px -40px;
+    display: none;
+}
+#weatherbox p{
+    margin:0;padding:0;
+}
+#owner{
+    font-size: 15px;
+    float: center;
+}
+.sideBar *{
+    padding: 0;
+    margin: 0;
+}
+.sidebar ul, .sideBar.li {
+    list-style: none;
+}
+.sidebar > ul {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+.sidebar > ul li a{
+    display: block;
+    padding: 5px 20px 5px 20px;
+    font-size: 18px;
+    color: black;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    box-shadow: 1px 4px 6px -4px black;
+}
+.sidebar li a:hover{
+    color: #aa7645;
+    transition: all 0.3s ease;
+    font-size: 19px;
+}
+/* pod menu */
+.sidebar li ul {
+    position: absolute;
+    z-index: 100;
+    padding: 0;
+    display: none;
+    text-decoration: none;
+    background-color: white;
+}
+.sidebar li > ul li a{
+    font-size: 14px;
+    text-transform: capitalize;
+}
+.sidebar li > ul li a:hover{
+    font-size: 15px;
+}
+.sidebar li:hover > ul{
+    display: block;
+    margin-left: -13px;
+}
+.btn {
+    float: right;
+    height: 15px;
+    padding: 0;
+    width: 15px;
+    font-size: 10px;
+    background-color: #dfb792;
+    font-family: arial sans-serif black;
+    border-radius: 20px;
+    border: none;
+    background: transparent url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e") center/0.875em auto no-repeat;
+    cursor: pointer;
+}
+.crosbtn {
+    float: right;
+    color: rgb(247, 70, 70);
+    margin: 5px -10px;
+    border: none;
+    border-radius: 10px;
+    font-size: 10px;
+    cursor: pointer;
+}
+.btn:hover {
+    height: 16px;
+    width: 16px;
+}
+
+/*******************************************************
+******************    Add New Room    ******************
+*******************************************************/
+#addNewRoomWindow {
+    display: none;
+    margin-top: 40px;
+}
+#addNewRoomWindow button {/* кнопка вибору */
+    text-transform: capitalize;
+    margin-top: 150px;
+}
+#addNewRoomWindow button:hover {
+    background: #c2a58a;
+}
+:root {
+    --feed-width: 200px;
+}
+.feed-container {
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    width: var(--feed-width);
+}
+.feed {
+    font-size: 0.875rem;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 0.4rem;
+    box-shadow: 0 .125rem .25rem rgba(0, 0, 0, 0.075);
+    display: none;
+    position: relative;
+    overflow: hidden;
+}
+.feed_show {
+    display: block; 
+    background: rgb(241,195,151, 0.9);
+}
+.feed__close {
+    content: "X";
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    width: 0.875em;
+    height: 0.875em;
+    background: transparent url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e") center/0.875em auto no-repeat;
+    border: 0;
+    opacity: 0.5;
+    cursor: pointer;
+    transition: opacity 0.1s ease-in-out;
+}
+.feed:not(:last-child) {
+    margin-bottom: 0.75rem;
+}
+.feed__body {
+    padding: 1rem;
+}
+.feed__close:hover {
+    opacity: 1;
+}
+.feed_message .feed__body {
+    padding-right: 2.25rem;
+}
