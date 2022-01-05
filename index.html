@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald:400,300" type="text/css">
+    <title>Wave</title>
+</head>
+<body>
+    <header>
+        <nav class="sidebar">
+            <ul>
+                <li><a href="#">Rooms</a>
+                    <ul id="roomList">
+                        <li><a id="addNewRoomButton" href="#">Add new Room</a></li>
+                    </ul>
+                </li>
+                <li><a id="devicesList" href="#">Devices</a></li>
+                <li><a href="#" onclick="settings()">Settings</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="weather" style="display: none;">
+        <div id='owner'></div>
+        <div id="weatherBox"></div>
+    </div>   
+    <div id="allApp">
+        <div id="startWindow">
+            <h2><small>Wave Smart Home</small></h2>
+            <div id="inputLogin">
+                <input name="name" type="text" placeholder="Name" required>
+                <input name="city" style="text-transform: capitalize;" type="text" placeholder="Your city" required>
+            </div>    
+            <button>Login</button>
+        </div>
+        <div id="addNewRoomWindow">
+            <h2>Add New Room</h2>
+            <div id="inputRoom">
+                <input id="roomName" type="text" placeholder="Room name">
+                <input id="roomArea" type="number" maxlength="3" placeholder="Room area">
+                
+                <button>Add room</button>
+            </div>    
+        </div>
+        <div id="deviceMenu" style="display: none;">
+           <!-- Меню зміни даних в девайсах-->
+        </div>
+        <div id="app" style="display: none;">      
+            <p></p>
+            <span></span>
+            <div id="allBlocks" style="display: inline">
+                <div id="block_0"></div>
+                <div id="block_1"></div>
+                <div id="block_2"></div>
+                <div id="block_3"></div>
+                <div id="block_4"></div>
+                <div id="block_5"></div>
+                <div id="block_6"></div>
+                <div id="block_7"></div>
+                <div id="block_8"></div>
+                <div id="block_9"></div>
+                <div id="block_10"></div>
+                <div id="block_11"></div> 
+            </div>    
+        </div>
+        <div id="settings">
+            <span>Settings</span>
+            <div id="settingroomlist">
+
+            </div>
+        </div> 
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
